@@ -1,7 +1,7 @@
 class Solution:
 	def reverseVowels( self, s: str ) -> str:
 		i, j = 0, len( s ) - 1
-		vowels = "aeiou"
+		vowels = "aeiouAEIOU"
 		s = list( s )
 		
 		while i < j:
