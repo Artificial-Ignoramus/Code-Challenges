@@ -3,7 +3,7 @@ class Solution:
 		m -= 1
 		n += m
 
-		for num in nums2[ : : -1 ]:
+		for m >= 0 and num in nums2[ : : -1 ]:
 			while nums1[m] > num:
 				nums1[n] = nums1[m]
 				m -= 1
