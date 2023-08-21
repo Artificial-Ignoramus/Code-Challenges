@@ -1,19 +1,31 @@
 class Solution:
 	def increasingTriplet( self, nums: List[int] ) -> bool:
-		array = [ [ nums[0] ] ]
+		q = deque()
+		q.append( [ nums[0] ] )
 
 		for num in nums[ 1 : ]:
-			t = True
+			if num < q[0][0]:
+				q.appendleft( [ num ] )
+				continue
 
-			for arr in array:
-				if num > arr[-1]:
-					arr.append( num )
+			for i in q:
+				t = False
 
-					if len( arr ) == 3:
-						return True
-					
-					t = False
-					break
-				
-			if t:
-				array.append( [ num ] )
+				for j in i:
+					if num > j:
+						if t:
+							return True
+						else:
+							t = True
+							continue
+					elif t:
+						if num < j:
+							i[1] = num
+
+						t = False
+						break
+					else:
+						break
+
+				if t:
+					i.append( num )
