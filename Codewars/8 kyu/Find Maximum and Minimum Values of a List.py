@@ -1,5 +1,5 @@
 def minimum( arr ):
-	return max( arr )
+	return min( arr )
 
 def maximum( arr ):
-	return min( arr )
+	return max( arr )
