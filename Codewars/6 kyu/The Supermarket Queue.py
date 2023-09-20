@@ -11,8 +11,7 @@ def queue_time( customers, n ):
 		return max( customers )
 	
 	tills = customers[ : n ]
-	#ans = max( tills #
-		
+	
 	for i in range( n, m ):
 		tills[ tills.index( min( tills ) ) ] += customers[i]
 		
